@@ -9,7 +9,7 @@ MineSweeper::MineSweeper(QWidget *parent)
       rows(10),
       cols(10),
       numMines(10),
-      unrevealedNonMineTiles(rows * cols - numMines){ //Everything is explaned in the documentation
+      unrevealedNonMineTiles(rows * cols - numMines){
     ui->setupUi(this);
     setupGame();
 }
@@ -52,13 +52,13 @@ void MineSweeper::generateMines(){
         int col = QRandomGenerator::global()->bounded(cols);
 
         if (mines[row][col] != 9) {
-            mines[row][col] = 9; // 9 represents a mine
+            mines[row][col] = 9;
             minesGenerated++;
         }
     }
 }
 
-void MineSweeper::updateAdjacentMinesCount(){ //Read the documentation to understand wat is happening
+void MineSweeper::updateAdjacentMinesCount(){
     for (int i = 0; i < rows; ++i) {
         for (int j = 0; j < cols; ++j) {
             if (mines[i][j] != 9) {
